@@ -19,6 +19,7 @@ node_modules/
 
 # dotenv environment variable files
 .env
+backend/.env
 
 # Sentry Config File
 .sentryclirc
