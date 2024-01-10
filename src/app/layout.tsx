@@ -24,11 +24,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pageName = usePathname().split("/")[1];
-  const [accessToken, setAccessToken] = useState({
-    raw: `${process.env.NODE_ENV}` === "development" ? "token" : "",
-    sub: "",
-    is_2fa: false,
-  });
+  const [accessToken, setAccessToken] = useState(
+    `${process.env.NODE_ENV}` === "development"
+      ? {
+          raw: "token",
+          sub: "",
+          is_2fa: true,
+        }
+      : {
+          raw: "",
+          sub: "",
+          is_2fa: false,
+        }
+  );
 
   useEffect(() => {
     const access_token = Cookies.get("access_token");
