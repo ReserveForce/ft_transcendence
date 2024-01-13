@@ -1,16 +1,24 @@
-import {Controller, Get, Param, Post, Query, Req, UseGuards} from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Query,
+  Req,
+  UseGuards
+} from '@nestjs/common';
 import { BlockedService } from './blocked.service';
 import {
   ApiBearerAuth,
-  ApiCreatedResponse,
-  ApiOkResponse,
-  ApiOperation, ApiParam, ApiQuery,
+  ApiOperation,
+  ApiParam,
+  ApiQuery,
   ApiResponse,
   ApiTags,
   ApiUnauthorizedResponse
 } from "@nestjs/swagger";
-import {AuthGuard} from "@nestjs/passport";
-import {TwoFaGuard} from "../auth/two-fa.guard";
+import { AuthGuard } from "@nestjs/passport";
+import { TwoFaGuard } from "../auth/two-fa.guard";
 
 @ApiTags("blocked")
 @Controller('blocked')
