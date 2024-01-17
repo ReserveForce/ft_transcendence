@@ -31,6 +31,9 @@ out
 # Gatsby files
 .cache/
 
+# Environment Variables
+.env
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -38,3 +41,6 @@ out
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+
+# next auto-generated file
+next-env.d.ts
