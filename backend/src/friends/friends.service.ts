@@ -7,7 +7,6 @@ import {
 import { PrismaService } from '../prisma/prisma.service';
 import { NotificationPayload } from '../notification/notification-payload.interface';
 import { NotificationGateway } from '../notification/notification.gateway';
-import { send } from 'process';
 
 @Injectable()
 export class FriendsService {
