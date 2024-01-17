@@ -1,4 +1,12 @@
-import {Controller, Param, Get, Post, Query, UseGuards, Req} from '@nestjs/common';
+import {
+  Controller,
+  Param,
+  Get,
+  Post,
+  Query,
+  UseGuards,
+  Req
+} from '@nestjs/common';
 import { FriendsService } from './friends.service';
 import {
   ApiBearerAuth,
@@ -9,8 +17,8 @@ import {
   ApiTags,
   ApiUnauthorizedResponse
 } from "@nestjs/swagger";
-import {AuthGuard} from "@nestjs/passport";
-import {TwoFaGuard} from "../auth/two-fa.guard";
+import { AuthGuard } from "@nestjs/passport";
+import { TwoFaGuard } from "../auth/two-fa.guard";
 
 @ApiTags("friends")
 @Controller('friends')

@@ -14,7 +14,6 @@ import { Response } from 'express';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ValidateOtpDto } from './dto/validate-otp.dto';
 import { UsersService } from '../users/users.service';
-import { NotFoundException } from '@nestjs/common';
 
 @ApiTags('auth')
 @Controller('auth')

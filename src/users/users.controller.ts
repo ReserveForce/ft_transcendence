@@ -4,12 +4,10 @@ import {
   Get,
   Param,
   Post,
-  Query,
   Req,
   UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import {
   ApiBearerAuth,
@@ -17,13 +15,11 @@ import {
   ApiOkResponse,
   ApiOperation,
   ApiParam,
-  ApiQuery,
   ApiResponse,
   ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
-import { id } from 'date-fns/locale';
 import { TwoFaGuard } from '../auth/two-fa.guard';
 
 @ApiTags('users')

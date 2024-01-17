@@ -3,10 +3,8 @@ import {
   HttpException,
   HttpStatus,
   Injectable,
-  NotFoundException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { th } from 'date-fns/locale';
 import { NotificationGateway } from '../notification/notification.gateway';
 import { NotificationPayload } from '../notification/notification-payload.interface';
 

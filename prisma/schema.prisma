@@ -30,7 +30,6 @@ model Users {
   @@unique([name])
 }
 
-
 enum Status {
   online
   offline
@@ -63,7 +62,6 @@ enum FriendRequestStatus {
   accepted
   declined
 }
-
 
 model BlockedUsers {
   id        Int @id @default(autoincrement())

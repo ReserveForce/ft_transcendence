@@ -1,8 +1,17 @@
-import { Controller, Get, Param, Post, Req, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Req,
+  UseGuards
+} from '@nestjs/common';
 import { GamesService } from './games.service';
 import { AuthGuard } from '@nestjs/passport';
 import { TwoFaGuard } from '../auth/two-fa.guard';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiTags
+} from '@nestjs/swagger';
 
 @ApiTags('games')
 @Controller('games')
