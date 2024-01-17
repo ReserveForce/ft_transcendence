@@ -1,14 +1,13 @@
 import {
   BadRequestException,
-  ForbiddenException,
   HttpException,
   HttpStatus,
   Injectable,
-  NotFoundException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { NotificationPayload } from '../notification/notification-payload.interface';
 import { NotificationGateway } from '../notification/notification.gateway';
+import { send } from 'process';
 
 @Injectable()
 export class FriendsService {
@@ -172,7 +171,7 @@ export class FriendsService {
         throw new BadRequestException('이미 친구임');
       }
 
-      const existingRequest = await this.prisma.friendRequests.findUnique({
+      const existingSendRequest = await this.prisma.friendRequests.findUnique({
         where: {
           sender_id_receiver_id: {
             sender_id: senderId,
@@ -181,8 +180,20 @@ export class FriendsService {
         },
       });
 
-      if (existingRequest) {
+      const existingReceiveRequest = await this.prisma.friendRequests.findUnique({
+        where: {
+          sender_id_receiver_id: {
+            sender_id: receiverId,
+            receiver_id: senderId,
+          },
+        },
+      });
+
+      if (existingSendRequest) {
         throw new BadRequestException('이미 친구요청을 보냄');
+      }
+      else if (existingReceiveRequest) {
+        throw new BadRequestException('이미 친구요청을 받음');
       }
       const blocked = await this.prisma.blockedUsers.findUnique({
         where: {

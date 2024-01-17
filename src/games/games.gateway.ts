@@ -1,6 +1,4 @@
 import {
-  ConnectedSocket,
-  MessageBody,
   OnGatewayConnection,
   OnGatewayDisconnect,
   SubscribeMessage,
@@ -9,7 +7,7 @@ import {
 } from '@nestjs/websockets';
 import { UseGuards } from '@nestjs/common';
 import { JwtWsGuard } from '../auth/jwt-ws.guard';
-import { Server, Socket } from 'socket.io';
+import { Server } from 'socket.io';
 import { ExtendedSocket } from '../auth/jwtWsGuard.interface';
 import { GamesService } from './games.service';
 

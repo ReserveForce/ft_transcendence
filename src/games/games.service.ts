@@ -1,6 +1,9 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { Server, Socket } from 'socket.io';
+import {
+  Server,
+  Socket
+} from 'socket.io';
 import { ExtendedSocket } from '../auth/jwtWsGuard.interface';
 import { NotificationGateway } from '../notification/notification.gateway';
 import { NotificationPayload } from '../notification/notification-payload.interface';

@@ -1,4 +1,7 @@
-import { Injectable, OnModuleInit } from '@nestjs/common';
+import {
+  Injectable,
+  OnModuleInit
+} from '@nestjs/common';
 import { CronJob } from 'cron';
 import { PrismaService } from '../prisma/prisma.service';
 

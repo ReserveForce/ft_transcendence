@@ -1,5 +1,7 @@
-import { IsIn, IsString, MaxLength } from 'class-validator';
-import { ChannelOptions } from '../enum/channel-options.enum';
+import {
+  IsString,
+  MaxLength
+} from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateChannelDto } from './create-channel.dto';
